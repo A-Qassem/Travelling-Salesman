@@ -1,6 +1,7 @@
 using Timer = System.Threading.Timer;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
@@ -24,7 +25,7 @@ namespace WinFormsApp1
         Color cityColor = Color.OrangeRed;
         Color pathColor = Color.MediumSeaGreen;
         Color currentPathColor = Color.FromArgb(150, 70, 130, 180);
-        bool showCurrentPath = false;
+        bool showCurrentPath = true;
         List<int> currentBestPath = new List<int>();
         bool showCityLabels = true;
 
@@ -368,49 +369,52 @@ namespace WinFormsApp1
 
             // Visualization panel setup
             visualizationPanel.Paint += (s, e) => OnPaint(e);
-            visualizationPanel.MouseMove += VisualizationPanel_MouseMove;
 
             // Add panels to form
             this.Controls.Add(visualizationPanel);
             this.Controls.Add(controlPanel);
         }
 
-        private void VisualizationPanel_MouseMove(object sender, MouseEventArgs e)
-        {
-            // For future implementation: highlight city on hover
-            visualizationPanel.Invalidate();
-        }
 
         void GenerateCities()
+        {
+
+
+            // Option 1: Random cities
+
+            // Option 2: Circle arrangement (uncomment to use)
+
+            CitiesPositions(1);
+        }
+        void CitiesPositions(int type)
         {
             cities = new Point[n];
             int padding = 80;
             int width = visualizationPanel.Width - (padding * 2);
             int height = visualizationPanel.Height - (padding * 2);
-
-            // Option 1: Random cities
-            for (int i = 0; i < n; i++)
-                cities[i] = new Point(
-                    rand.Next(padding, padding + width),
-                    rand.Next(padding, padding + height)
-                );
-
-            // Option 2: Circle arrangement (uncomment to use)
-            /*
-            double radius = Math.Min(width, height) / 2.5;
-            double centerX = padding + width / 2;
-            double centerY = padding + height / 2;
-            
-            for (int i = 0; i < n; i++)
+            if (type == 1)
             {
-                double angle = 2 * Math.PI * i / n;
-                int x = (int)(centerX + radius * Math.Cos(angle));
-                int y = (int)(centerY + radius * Math.Sin(angle));
-                cities[i] = new Point(x, y);
+                for (int i = 0; i < n; i++)
+                    cities[i] = new Point(
+                    rand.Next(padding, padding + width),
+                        rand.Next(padding, padding + height)
+                    );
             }
-            */
-        }
+            else
+            {
+                double radius = Math.Min(width, height) / 2.5;
+                double centerX = padding + width / 2;
+                double centerY = padding + height / 2;
 
+                for (int i = 0; i < n; i++)
+                {
+                    double angle = 2 * Math.PI * i / n;
+                    int x = (int)(centerX + radius * Math.Cos(angle));
+                    int y = (int)(centerY + radius * Math.Sin(angle));
+                    cities[i] = new Point(x, y);
+                }
+            }
+        }
         void InitializePopulation()
         {
             population.Clear();
@@ -698,8 +702,6 @@ namespace WinFormsApp1
                 }
             }
 
-            // Draw legend
-            DrawLegend(g);
         }
 
         private void DrawArrow(Graphics g, Point start, Point end, Pen pen)
@@ -733,62 +735,6 @@ namespace WinFormsApp1
 
             // Draw arrow head
             g.FillPolygon(new SolidBrush(pen.Color), arrowHead);
-        }
-
-        private void DrawLegend(Graphics g)
-        {
-            // Set up legend panel at bottom left
-            int legendX = 20;
-            int legendY = visualizationPanel.Height - 120;
-            int legendWidth = 250;
-            int legendHeight = 100;
-
-            // Draw semi-transparent background
-            g.FillRectangle(
-                new SolidBrush(Color.FromArgb(220, 255, 255, 255)),
-                legendX, legendY, legendWidth, legendHeight
-            );
-            g.DrawRectangle(
-                new Pen(Color.FromArgb(100, 0, 0, 0), 1),
-                legendX, legendY, legendWidth, legendHeight
-            );
-
-            // Draw legend title
-            g.DrawString(
-                "Legend",
-                new Font("Segoe UI", 10, FontStyle.Bold),
-                Brushes.Black,
-                legendX + 10, legendY + 10
-            );
-
-            // Draw legend items
-            int itemY = legendY + 35;
-            int lineSize = 30;
-
-            // Best path
-            g.DrawLine(
-                new Pen(pathColor, 2.5f),
-                legendX + 10, itemY, legendX + 10 + lineSize, itemY
-            );
-            g.DrawString(
-                "Best Overall Path",
-                new Font("Segoe UI", 9),
-                Brushes.Black,
-                legendX + 50, itemY - 7
-            );
-
-            // Current path (if enabled)
-            itemY += 25;
-            g.DrawLine(
-                new Pen(currentPathColor, 1.5f),
-                legendX + 10, itemY, legendX + 10 + lineSize, itemY
-            );
-            g.DrawString(
-                "Current Generation Path" + (showCurrentPath ? "" : " (Hidden)"),
-                new Font("Segoe UI", 9),
-                Brushes.Black,
-                legendX + 50, itemY - 7
-            );
         }
 
         void UpdateLabels(long generationTime = 0)

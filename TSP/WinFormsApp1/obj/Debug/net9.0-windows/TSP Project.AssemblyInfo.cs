@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("WinFormsApp1")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TSP Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11da85a128c27e87af08cdfdf366ec15e6faf584")]
-[assembly: System.Reflection.AssemblyProductAttribute("WinFormsApp1")]
-[assembly: System.Reflection.AssemblyTitleAttribute("WinFormsApp1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("TSP Project")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TSP Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
