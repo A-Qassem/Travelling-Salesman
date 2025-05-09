@@ -1,13 +1,16 @@
-﻿namespace WinFormsApp1
+﻿namespace TSP
 {
-    partial class UI
+    partial class MainForm
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Label labelBestCost;
-        private Label labelGeneration;
-        private Button buttonStart;
-        private Button buttonStop;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -17,17 +20,13 @@
             base.Dispose(disposing);
         }
 
-        private void InitializeComponent()
-        {
-            SuspendLayout();
-            // 
-            // UI
-            // 
-            ClientSize = new Size(1405, 763);
-            Name = "UI";
-            Text = "Genetic Algorithm - TSP";
-            WindowState = FormWindowState.Maximized;
-            ResumeLayout(false);
-        }
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        
+        #endregion
     }
 }

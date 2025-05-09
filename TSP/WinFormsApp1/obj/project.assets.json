@@ -125,9 +125,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repo\\Travelling-Salesman\\TSP\\WinFormsApp1\\WinFormsApp1.csproj",
-      "projectName": "WinFormsApp1",
-      "projectPath": "D:\\repo\\Travelling-Salesman\\TSP\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "D:\\repo\\Travelling-Salesman\\TSP\\WinFormsApp1\\TSP.csproj",
+      "projectName": "TSP",
+      "projectPath": "D:\\repo\\Travelling-Salesman\\TSP\\WinFormsApp1\\TSP.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "D:\\repo\\Travelling-Salesman\\TSP\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",

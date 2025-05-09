@@ -34,7 +34,6 @@ D:\repo\Travelling-Salesman\TSP\WinFormsApp1\bin\Debug\net9.0-windows\System.Web
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\bin\Debug\net9.0-windows\System.Web.WebPages.dll
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\bin\Debug\net9.0-windows\Microsoft.Web.Infrastructure.dll
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
-D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.UI.resources
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.csproj.GenerateResource.cache
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
@@ -47,3 +46,4 @@ D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\refint\Win
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.pdb
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.genruntimeconfig.cache
 D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\ref\WinFormsApp1.dll
+D:\repo\Travelling-Salesman\TSP\WinFormsApp1\obj\Debug\net9.0-windows\WinFormsApp1.MainForm.resources
